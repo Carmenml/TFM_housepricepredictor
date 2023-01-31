@@ -90,7 +90,6 @@ dependencies:
   - libbrotlicommon=1.0.9=h166bdaf_7
   - libbrotlidec=1.0.9=h166bdaf_7
   - libbrotlienc=1.0.9=h166bdaf_7
-  - libclang=10.0.1=default_hb85057a_2
   - libcurl=7.87.0=h91b91d3_0
   - libdeflate=1.8=h7f8727e_5
   - libedit=3.1.20221030=h5eee18b_0
@@ -159,7 +158,6 @@ dependencies:
   - prometheus_client=0.14.1=py310h06a4308_0
   - prompt-toolkit=3.0.36=py310h06a4308_0
   - prompt_toolkit=3.0.36=hd3eb1b0_0
-  - protobuf=3.20.1=py310h295c915_0
   - psutil=5.9.0=py310h5eee18b_0
   - ptyprocess=0.7.0=pyhd3eb1b0_2
   - pure_eval=0.2.2=pyhd3eb1b0_0
@@ -232,5 +230,40 @@ dependencies:
   - zlib=1.2.13=h5eee18b_0
   - zstd=1.5.2=ha4553b6_0
   - pip:
+    - absl-py==1.4.0
+    - astunparse==1.6.3
+    - flatbuffers==23.1.21
+    - gast==0.4.0
+    - google-auth==2.16.0
+    - google-auth-oauthlib==0.4.6
+    - google-pasta==0.2.0
+    - grpcio==1.51.1
+    - h5py==3.8.0
+    - joblib==1.2.0
+    - keras==2.11.0
+    - libclang==15.0.6.1
+    - markdown==3.4.1
+    - oauthlib==3.2.2
+    - opt-einsum==3.3.0
+    - plotly==5.13.0
+    - protobuf==3.19.6
+    - pyasn1==0.4.8
+    - pyasn1-modules==0.2.8
     - pyqt5-sip==12.11.0
+    - requests-oauthlib==1.3.1
+    - rsa==4.9
+    - scikit-learn==1.2.1
+    - scipy==1.10.0
+    - sklearn==0.0.post1
+    - tenacity==8.1.0
+    - tensorboard==2.11.2
+    - tensorboard-data-server==0.6.1
+    - tensorboard-plugin-wit==1.8.1
+    - tensorflow==2.11.0
+    - tensorflow-estimator==2.11.0
+    - tensorflow-io-gcs-filesystem==0.30.0
+    - termcolor==2.2.0
+    - threadpoolctl==3.1.0
+    - werkzeug==2.2.2
+    - wrapt==1.14.1
 prefix: /home/dsc/.conda/envs/tfm-env
