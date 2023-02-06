@@ -1,0 +1,10 @@
+Modelo,Detalles,R2 train,R2 test,MAE train,MAE test
+Regresión Lineal,Sin procesar/Sin outliers,0.7968,0.7097,59748.34176637254,72635.24648205585
+Regresión Bridge,Sin procesar/Sin outliers,0.7589,0.6166,66154.7794501251,90640.08142708962
+SVM linear,Sin procesar/Sin outliers,0.6899,0.5765,71564.13060570296,91359.90576749446
+SVM poly,Sin procesar/Sin outliers,-0.0879,-0.1417,133037.9792089336,138241.08661220293
+SVM rbf,Sin procesar/Sin outliers,-0.0959,-0.146,133405.15727014633,138460.5766673016
+SVM sigmoid,Sin procesar/Sin outliers,-0.0960,-0.1462,133416.9965066033,138470.9979633448
+xgboost Regresion,Sin procesar/Sin outliers,1.0000,0.6653,264.89582375919116,60078.62637867647
+Gradient Boosting Regressor,Sin procesar/Sin outliers,0.9939,0.5325,11113.9407932551,71422.95436732694
+Árbol de regresión,Sin procesar/Sin outliers,0.8045,0.6497,55712.089869281044,75832.37114845938

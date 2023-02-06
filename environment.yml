@@ -266,4 +266,5 @@ dependencies:
     - threadpoolctl==3.1.0
     - werkzeug==2.2.2
     - wrapt==1.14.1
+    - xgboost==1.7.3
 prefix: /home/dsc/.conda/envs/tfm-env

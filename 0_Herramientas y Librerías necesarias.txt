@@ -22,14 +22,21 @@ numpy
 Plotly
 Seaborn
 os
-LabelEncoder
-from sklearn.linear_model import LinearRegression
+
+sklearn
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Ridge
+from sklearn.svm import SVR
+import xgboost as xgb
+from sklearn.ensemble import GradientBoostingRegressor
+
+
+
 from sklearn.tree import DecisionTreeRegressor
-import tensorflow as tf
-from tensorflow.keras import regularizers
+from sklearn.preprocessing import MinMaxScaler
+
+
 from sklearn.metrics import r2_score
 Streamlit
 from plotly.subplots import make_subplots
