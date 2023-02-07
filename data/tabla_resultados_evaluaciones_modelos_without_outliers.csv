@@ -1,10 +1,19 @@
 Modelo,Detalles,R2 train,R2 test,MAE train,MAE test
-Regresión Lineal,Sin procesar/Sin outliers,0.7968,0.7097,59748.34176637254,72635.24648205585
-Regresión Bridge,Sin procesar/Sin outliers,0.7589,0.6166,66154.7794501251,90640.08142708962
-SVM linear,Sin procesar/Sin outliers,0.6899,0.5765,71564.13060570296,91359.90576749446
-SVM poly,Sin procesar/Sin outliers,-0.0879,-0.1417,133037.9792089336,138241.08661220293
-SVM rbf,Sin procesar/Sin outliers,-0.0959,-0.146,133405.15727014633,138460.5766673016
-SVM sigmoid,Sin procesar/Sin outliers,-0.0960,-0.1462,133416.9965066033,138470.9979633448
-xgboost Regresion,Sin procesar/Sin outliers,1.0000,0.6653,264.89582375919116,60078.62637867647
-Gradient Boosting Regressor,Sin procesar/Sin outliers,0.9939,0.5325,11113.9407932551,71422.95436732694
-Árbol de regresión,Sin procesar/Sin outliers,0.8045,0.6497,55712.089869281044,75832.37114845938
+Regresión Lineal,Sin procesar/Sin outliers,0.7928,0.7354,61043.83965580439,75237.05291632694
+Regresión Lineal,Datos escalados/Sin outliers,0.7928,0.6329,61043.83965580649,114598.33306097174
+Regresión Bridge,Sin procesar/Sin outliers,0.7402,0.7010,69056.24899178963,75928.87631652209
+Regresión Bridge,Datos escalados/Sin outliers,0.3230,0.3019,118907.21096596964,140214.26290448522
+SVM linear,Sin procesar/Sin outliers,0.6527,0.6331,74947.34588192857,84178.37787710293
+SVM poly,Sin procesar/Sin outliers,-0.1033,-0.0827,131935.4238996286,142763.35040720526
+SVM rbf,Sin procesar/Sin outliers,-0.1105,-0.0879,132262.55261302623,143032.0032550847
+SVM sigmoid,Sin procesar/Sin outliers,-0.1107,-0.0881,132274.2511535846,143042.55044786612
+SVM linear,Datos escalados/Sin outliers,-0.1105,-0.0878,132250.64253201796,143017.93110196354
+SVM poly,Datos escalados/Sin outliers,-0.1097,-0.0870,132191.33432337627,142955.9280963135
+SVM rbf,Datos escalados/Sin outliers,-0.1106,-0.0880,132267.4976004181,143036.7284119127
+SVM sigmoid,Datos escalados/Sin outliers,-0.1107,-0.0880,132272.86594350747,143041.49149134182
+xgboost Regresion,Sin procesar/Sin outliers,1.0000,0.7013,218.7863051470588,68433.1484375
+xgboost Regresion,Datos escalados/Sin outliers,1.0000,0.4943,218.7863051470588,116890.32444852941
+Gradient Boosting Regressor,Sin procesar/Sin outliers,0.9925,0.6748,12069.541355772983,66372.41511906146
+Gradient Boosting Regressor,Datos escalados/Sin outliers,0.9923,0.5453,12104.36450583698,116695.45502896553
+Árbol de regresión,Sin procesar/Sin outliers,0.8325,0.6017,52274.11194342809,86346.88433436533
+Árbol de regresión,Datos escalados/Sin outliers,0.8325,0.5291,52274.11194342809,107570.7273233887
