@@ -239,6 +239,7 @@ dependencies:
     - google-pasta==0.2.0
     - grpcio==1.51.1
     - h5py==3.8.0
+    - ipynb==0.5.1
     - joblib==1.2.0
     - keras==2.11.0
     - libclang==15.0.6.1
@@ -250,6 +251,7 @@ dependencies:
     - pyasn1==0.4.8
     - pyasn1-modules==0.2.8
     - pyqt5-sip==12.11.0
+    - python-dotenv==0.21.1
     - requests-oauthlib==1.3.1
     - rsa==4.9
     - scikit-learn==1.2.1
