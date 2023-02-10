@@ -50,4 +50,4 @@ Los diferentes archivos fuera de las carpetas:
 Una vez en funcionamiento la app ya podéis deisfrutar de la visualización de las viviendas más rentables o ver cual sería el precio de vuestra vivienda.
 
 
-<fontsize= '30px'><strong>¡Gracias!</strong></fontsize>
+<FONT SIZE= '30px'><strong>¡Gracias!</strong></FONT>

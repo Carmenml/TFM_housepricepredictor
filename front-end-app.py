@@ -107,8 +107,8 @@ with tab1:
         st.markdown("<p style='color: darkblue; font-size: 25px;'>Precio medio: <strong>{:,} €</strong></p>".format(int(mean_price)), unsafe_allow_html=True)
         
         #Media metros construidos
-        mean_constucted_area = filtered_data['constructed_area'].mean()
-        st.markdown("<p style='color: darkblue; font-size: 25px;'>Area construida media: <strong>{:,} m2</strong></p>".format(int(constructed_area)), unsafe_allow_html=True)
+        mean_constructed_area = filtered_data['constructed_area'].mean()
+        st.markdown("<p style='color: darkblue; font-size: 25px;'>Area construida media: <strong>{:,} m2</strong></p>".format(int(mean_constructed_area)), unsafe_allow_html=True)
         
         #tabla de datos filtrados
         st.dataframe(filtered_data)
@@ -133,7 +133,7 @@ with tab1:
         
         #gráfica distribución de rentabilidad
         sb.distplot(filtered_data['%_rentabilidad'], color = 'orange')
-        plt.title('Distribucíon de rentabilidad', fontsize = 16, color= 'darkblue')
+        plt.title('Distribución de rentabilidad', fontsize = 16, color= 'darkblue')
         plt.xlabel('Rentabilidad', fontsize = 10, color='darkblue')
         plt.ylabel('Frecuencia', fontsize = 10, color='darkblue')
         plt.xticks(fontsize = 8)
