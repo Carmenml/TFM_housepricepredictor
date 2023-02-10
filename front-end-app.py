@@ -39,15 +39,15 @@ data = data.sort_values(by='%_rentabilidad',ascending=False)
 
 #Configuración Tabs 1 rentabilidad de viviendas
 with tab1:
-    col1, col2 = st.columns([1,3], gap='medium')
+    col1, col2 = st.columns([1,3], gap='large')
     with col1:
         st.subheader("Aplicar Filtros")
-        #meter en máximo y mínimo una función que coja automáticamente esos valores de los datos del dataset
-        Price = st.slider("Precio Máximo", int(data['price'].min()), int(data['price'].max()), value=int(data['price'].max()))
+        #se usa en máximo y mínimo para que coja automáticamente esos valores de los datos del dataset
         Rentabilidad = st.slider("Rentabilidad mínima", float(data['%_rentabilidad'].min()), float(data['%_rentabilidad'].max()), value=float(data['%_rentabilidad'].min()))
+        Price = st.slider("Precio Máximo", int(data['price'].min()), int(data['price'].max()), value=int(data['price'].max()))
         room_number = st.slider("Selecciona el número de habitaciones", int(data['room_number'].min()), int(data['room_number'].max()), value=int(data['room_number'].min()))
         bath_number = st.slider("Selecciona el número de baños", int(data['bath_number'].min()), int(data['bath_number'].max()), value=int(data['bath_number'].min()))
-        constructed_area = st.slider("Selecciona los metros cuadrados", int(data['constructed_area'].min()), int(data['constructed_area'].max()), value=int(data['constructed_area'].min()))
+        constructed_area = st.slider("Mínimo Metros cuadrados", int(data['constructed_area'].min()), int(data['constructed_area'].max()), value=int(data['constructed_area'].min()))
 
         #Aplicar los primeros filtros al dataset.
         filtered_data = data.query(f"room_number >= {room_number} and bath_number >= {bath_number} and constructed_area >= {constructed_area}")
@@ -65,7 +65,7 @@ with tab1:
         is_needs_renovating = st.checkbox("Necesita Reforma", value=False)
         is_goog_condition = st.checkbox("En Buena Condición", value=False)
 
-        # filtrar el conjunto de datos en función de los valoresif has_swimmingpool:
+        # filtrar el conjunto de datos en función de los valores:
         if has_swimmingpool:
             filtered_data = filtered_data[filtered_data['has_swimmingpool'] == True]
         if has_garden:
@@ -92,26 +92,46 @@ with tab1:
     #Configuración Tabs 2 calculador precio de la vivienda  
     with col2:
         #st.subheader("Aplicar Filtros")
-        st.markdown("<p style='color: darkblue; font-size: 40px;'>Número de viviendas: <strong>{}</strong></p>".format(filtered_data.shape[0]), unsafe_allow_html=True)
-
+        
+        #Número de viviendas con rentabilidad positiva en la zona de Churriana
+        rentabilidad_positiva = data[data['%_rentabilidad'] > 0]
+        recuento = rentabilidad_positiva.shape[0]
+        st.markdown("<p style='color: darkorange; font-size: 40px;'>Rentabilidad positiva: <strong>{}</strong> Viviendas en Churriana</p>".format(recuento), unsafe_allow_html=True)
+        
+    
+        #Número de viviendas tras aplicar el filtro
+        st.markdown("<p style='color: darkblue; font-size: 25px;'>Número de viviendas: <strong>{}</strong></p>".format(filtered_data.shape[0]), unsafe_allow_html=True)
+        
+        #Media del precio de las viviendas filtradas
+        mean_price = filtered_data['price'].mean()
+        st.markdown("<p style='color: darkblue; font-size: 25px;'>Precio medio: <strong>{:,} €</strong></p>".format(int(mean_price)), unsafe_allow_html=True)
+        
+        #Media metros construidos
+        mean_constucted_area = filtered_data['constructed_area'].mean()
+        st.markdown("<p style='color: darkblue; font-size: 25px;'>Area construida media: <strong>{:,} m2</strong></p>".format(int(constructed_area)), unsafe_allow_html=True)
+        
+        #tabla de datos filtrados
         st.dataframe(filtered_data)
 
-        #gráfico habitaciones y baños
-        plt.figure(figsize=(6,3))
+        #gráficas habitaciones y baños
+        plt.figure(figsize=(12,3))
+
+        plt.subplot(1,2,1)
         plt.bar(filtered_data['room_number'].value_counts().index, filtered_data['room_number'].value_counts().values, color = 'orange')
         plt.title('Número Habitaciones', color='darkblue')
         plt.xlabel('Habitaciones', color='darkblue')
         plt.ylabel('Count', color='darkblue')
-        st.pyplot()
 
-        plt.figure(figsize=(6,3))
+        plt.subplot(1,2,2)
         plt.bar(filtered_data['bath_number'].value_counts().index, filtered_data['bath_number'].value_counts().values, color = 'orange')
         plt.title('Número de baños',color='darkblue')
         plt.xlabel('Baños',color='darkblue')
         plt.ylabel('Count',color='darkblue')
+
         st.pyplot()
         
-        #distribución de rentabilidad
+        
+        #gráfica distribución de rentabilidad
         sb.distplot(filtered_data['%_rentabilidad'], color = 'orange')
         plt.title('Distribucíon de rentabilidad', fontsize = 16, color= 'darkblue')
         plt.xlabel('Rentabilidad', fontsize = 10, color='darkblue')
